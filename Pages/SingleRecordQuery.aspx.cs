@@ -23,7 +23,7 @@ namespace WebApp.Pages
         {
             if (string.IsNullOrEmpty(IDArg.Text))
             {
-                MessageLabel.Text = "Enter a ID value.";
+                MessageLabel.Text = "Enter an ID value.";
                 ID.Text = "";
                 Name.Text = "";
             }
@@ -36,7 +36,7 @@ namespace WebApp.Pages
                     {
                         Controller01 sysmgr = new Controller01();
                         Entity01 info = null;
-                        info = sysmgr.FindByPKID(id); //BLL controller method
+                        info = sysmgr.FindByID(id); //BLL controller method
                         if (info == null)
                         {
                             MessageLabel.Text = "ID not found.";
@@ -45,8 +45,8 @@ namespace WebApp.Pages
                         }
                         else
                         {
-                            ID.Text = info.CategoryID.ToString();
-                            Name.Text = info.CategoryName;
+                            ID.Text = info.TeamID.ToString();
+                            Name.Text = info.TeamName;
                         }
                     }
                     else
